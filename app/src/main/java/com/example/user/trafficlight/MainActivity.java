@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onSaveInstanceState(Bundle outState){
         super.onSaveInstanceState(outState);
-        View view = findViewById(R.id.linearLayout);
+        View linear = findViewById(R.id.linearLayout);
         int color = Color.TRANSPARENT;
-        Drawable background = view.getBackground();
+        Drawable background = linear.getBackground();
         if (background instanceof ColorDrawable)
             color = ((ColorDrawable) background).getColor();
         outState.putInt("background", color);
@@ -58,10 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-
-        View view = findViewById(R.id.linearLayout);
+        View linear = findViewById(R.id.linearLayout);
         if (savedInstanceState != null && savedInstanceState.containsKey("background")) {
-            view.setBackgroundColor(savedInstanceState.getInt("background"));
+           linear.setBackgroundColor(savedInstanceState.getInt("background"));
 
         }
     }
